@@ -5,9 +5,10 @@ public class LinkList {
 
     public static void main(String[] args) {
         LinkList linkList = new LinkList();
-        linkList.add(56);
-        linkList.add(30);
+
         linkList.add(70);
+        linkList.add(30);
+        linkList.add(56);
         linkList.print();
     }
 
