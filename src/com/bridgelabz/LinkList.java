@@ -9,7 +9,15 @@ public class LinkList {
         linkList.addAtEnd(56);
         linkList.addAtEnd(70);
         linkList.addBetween(30);
+        linkList.pop();
         linkList.print();
+    }
+    public void pop()
+    {
+        Node deleteElement = head;
+        head=head.next;
+        deleteElement.data=0;
+        deleteElement.next=null;
     }
     public void addBetween(int data)
     {
