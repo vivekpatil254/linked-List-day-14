@@ -6,12 +6,30 @@ public class LinkList {
     public static void main(String[] args) {
         LinkList linkList = new LinkList();
 
-        linkList.add(70);
-        linkList.add(30);
-        linkList.add(56);
+        linkList.addAtEnd(56);
+        linkList.addAtEnd(30);
+        linkList.addAtEnd(70);
         linkList.print();
     }
+    public void addAtEnd(int data)
+    {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node temp=head;
+            while(temp.next!=null)
+            {
+                temp=temp.next;
+            }
+            temp.next=newNode;
+            newNode.next=null;
+        }
 
+
+
+
+        }
     public void add(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -25,7 +43,7 @@ public class LinkList {
     public void print() {
         Node temp = head;
         while (temp != null) {
-            System.out.println(temp.data);
+            System.out.println(temp.data+"  ===>>  ");
             temp = temp.next;
         }
     }
