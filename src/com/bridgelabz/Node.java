@@ -9,4 +9,5 @@ package com.bridgelabz;
            this.data=data;
        }
 
+
 }
