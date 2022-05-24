@@ -10,7 +10,8 @@ public class LinkList {
         linkList.add(70);
         linkList.add(30);
         linkList.add(56);
-        linkList.popLast();
+        linkList.addAfter(40,30);
+        //linkList.popLast();
         linkList.find(30);
         //linkList.addBetween(70);
         //linkList.pop();
@@ -18,24 +19,40 @@ public class LinkList {
     }
 
 
-    public void find(int key)
-    {      Node temp = head;
-        if(head==null)
+    public void find(int key) {
+        Node temp = head;
+        if (head == null)
             System.out.println("the linklist is empty ...");
         else
-             while(temp != null){
-                if (temp.data==key)
-                {
+            while (temp != null) {
+                if (temp.data == key) {
                     System.out.println("the key node is present in linklist ...");
                     break;
                 }
-                temp=temp.next;
+                temp = temp.next;
 
             }
 
 
     }
 
+    public void addAfter(int data, int previousData)
+    {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                if (temp.data == previousData) {
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                    break;
+                }
+                temp = temp.next;
+            }
+        }
+    }
     public void popLast() {
         if (head == null)
             System.out.println("the linklist is empty");
